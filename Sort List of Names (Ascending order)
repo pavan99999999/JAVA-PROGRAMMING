@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class SortNames {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter number of names: ");
+        int n = sc.nextInt();
+        sc.nextLine();
+        String arr[] = new String[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextLine();
+        }
+        System.out.print("Order (A/D): ");
+        char order = sc.next().charAt(0);
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = i + 1; j < n; j++) {
+                if ((order == 'A' && arr[i].compareTo(arr[j]) > 0) ||
+                    (order == 'D' && arr[i].compareTo(arr[j]) < 0)) {
+                    String temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+        for (String name : arr) {
+            System.out.println(name);
+        }
+    }
+}
