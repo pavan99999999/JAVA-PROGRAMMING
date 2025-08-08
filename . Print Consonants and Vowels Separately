@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class VowelsConsonants {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a word: ");
+        String s = sc.nextLine().toLowerCase();
+        System.out.print("Consonants: ");
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if (Character.isLetter(ch) && !"aeiou".contains(ch + "")) {
+                System.out.print(ch + " ");
+            }
+        }
+        System.out.print("\nVowels: ");
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+            if ("aeiou".contains(ch + "")) {
+                System.out.print(ch + " ");
+            }
+        }
+    }
+}
