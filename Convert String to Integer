@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+class StringToInt {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number string: ");
+        String s = sc.nextLine();
+        int num = 0;
+        for (int i = 0; i < s.length(); i++) {
+            num = num * 10 + (s.charAt(i) - '0');
+        }
+        System.out.println("Output Integer: " + num);
+    }
+}
